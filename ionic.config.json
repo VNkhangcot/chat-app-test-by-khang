@@ -1,0 +1,8 @@
+{
+  "name": "ChatApp test by Khang",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "1e27184a"
+}
