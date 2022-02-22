@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent} from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { LoadingManagementComponent } from './loading-management/loading-management.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -19,6 +20,9 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },{
+    path: 'loading',
+    component: LoadingManagementComponent
   },
 ];
 

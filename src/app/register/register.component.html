@@ -1,3 +1,7 @@
+<!-- <video id="background-video" autoplay loop muted poster="blob:https://youfiles.herokuapp.com/7029ad26-6ae8-4f24-91cc-51cd2b766068" type="video/mp4"> -->
+  <iframe id="background-video" width="100%" height="100%" src="https://www.youtube.com/embed/nejlAUY5gEw"  frameborder="0" allow=" autoplay;" allowfullscreen></iframe>
+<!-- </video> -->
+
 <div class="block-center">
   <ion-card class="">
     <ion-card-header>
@@ -8,15 +12,15 @@
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked">Email</ion-label>
-        <ion-input placeholder="nguyenvana@........"></ion-input>
+        <ion-input placeholder="nguyenvana@........" [(ngModel)]="emailClient"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Password</ion-label>
-        <ion-input placeholder="*********"></ion-input>
+        <ion-input type="password" placeholder="*********" [(ngModel)]="passwordClient"></ion-input>
       </ion-item>
       <br />
-      <ion-button size="block" color="dark">Register</ion-button>
-      <ion-button size="block" color="dark">Back</ion-button>
+      <ion-button size="block" color="dark" (click)="Register()">Register</ion-button>
+      <ion-button size="block" color="dark" href="/login">Back</ion-button>
 
     </ion-card-content>
   </ion-card>

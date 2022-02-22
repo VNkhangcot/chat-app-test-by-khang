@@ -8,6 +8,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import {LoadingManagementComponent}from './loading-management/loading-management.component';
+
+
+//Component
+//Custom
 
 const firebaseConfig = {
   apiKey: "AIzaSyBc0_h3-Q-8jEfHQDwaIwuR_M51gUp6WOw",
@@ -21,9 +29,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,LoginComponent, RegisterComponent, LoadingManagementComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   
