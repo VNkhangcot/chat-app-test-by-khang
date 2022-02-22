@@ -1,0 +1,21 @@
+.block-center {
+    width: 350px;
+    height: 600px;
+    display: block;
+    margin: 0 auto;
+    position: initial;
+    top: 50%;
+    transform: translateY(23%);
+}
+.img{
+    /*position: relative;
+    display: block;*/
+      /*width: 200px;*/
+    //   height: 300px;
+    //   background-color: #3e3e3e;
+    //   background-image: none;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      border-radius: 15px;
+  }
