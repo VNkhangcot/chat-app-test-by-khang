@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {  Router,NavigationEnd } from '@angular/router';
 import { AuthServicesService } from './services/auth-services.service';
-
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -20,7 +20,7 @@ export class AppComponent {
   isAuthenticated = false;
   name = 'Get Current Url Route Demo';
   currentRoute: string = window.location.pathname;
-  constructor(private router: Router ,public authService: AuthServicesService) {
+  constructor(private router: Router ,public authService: AuthServicesService, private cookieService: CookieService) {
     
     
     // this.router.events.(event => event instanceof NavigationEnd)
@@ -29,10 +29,14 @@ export class AppComponent {
     //           this.currentRoute = event.url;          
     //           console.log(event);
     //        });
-    console.log("state auth: " +authService.isCheckAuth());
+
   }
   ngOnInit() {
-    this.isAuthenticated = this.authService.isCheckAuth();
+    if(this.cookieService.get('isAuthentication') == "yes" ){
+      this.isAuthenticated = true;
+    }else{
+      this.isAuthenticated = false;
+    }
   }
 
 

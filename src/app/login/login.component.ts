@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       // An error happened.
     });
     this.emailClient = this.cookieService.get('userEmailLocal');
-    this.cookieService.deleteAll;
+    
     //this.passwordClient = this.hashProvider.get(this.cookieService.get('userPasswordLocal'));
   }
 

@@ -39,32 +39,7 @@ export class AuthServicesService {
     });
     
   }
-  //is authentication
-  isCheckAuth() :boolean {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        //console.log("data from check auth" +user.uid);
-        //User in session
 
-        return true;
-      } else {
-        // User is signed out
-        // ...
-        this.toastProvider.presentToast("This session has expired!! Please login again!"); // call Toast menthod here
-        this.router.navigate(['/login']);
-        return false;
-      }
-      if(this.cookieService.get('%3Fdjasbdyw!kjdnawjb') != user.refreshToken && this.cookieService.get('userID') != user.uid){
-        this.toastProvider.presentToast("Security checked!! Please login again!"); // call Toast menthod here
-        this.router.navigate(['/login']);
-        return false;
-      }
-    });
-    return false;
-  }
   //Login menthod
     Login(emai, password){
       this.loadingProvider.presentLoading(); //call loading menthod here
@@ -77,6 +52,7 @@ export class AuthServicesService {
           this.cookieService.set('userID', user.uid);
           this.cookieService.set('?djasbdyw!kjdnawjb', user.refreshToken);
           this.cookieService.set('userDisplayName', user.displayName);
+          this.cookieService.set('isAuthentication', "yes");
           this.router.navigate(['/folder/Inbox']);
           
           //Debug here
