@@ -1,6 +1,6 @@
-<!-- <video id="background-video" autoplay loop muted poster="blob:https://youfiles.herokuapp.com/7029ad26-6ae8-4f24-91cc-51cd2b766068" type="video/mp4"> -->
-  <iframe id="background-video" width="100%" height="100%" src="https://www.youtube.com/embed/nejlAUY5gEw"  frameborder="0" allow=" autoplay;" allowfullscreen></iframe>
-<!-- </video> -->
+<video id="background-video" autoplay loop muted src="https://static.videezy.com/system/resources/previews/000/037/482/original/map_line_connection.mp4" type="video/mp4">
+  <!-- <iframe id="background-video" width="100%" height="100%" src="https://www.youtube.com/embed/nejlAUY5gEw"  frameborder="0" allow=" autoplay;" allowfullscreen></iframe> -->
+</video>
 
 <div class="block-center">
     <ion-card class="">
@@ -12,11 +12,11 @@
       <ion-card-content>
         <ion-item>
           <ion-label position="stacked">Email</ion-label>
-          <ion-input type="email"  [(ngModel)]="emailClient"></ion-input>
+          <ion-input type="email" placeholder="JohnSmith@outlook.com" [(ngModel)]="emailClient"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Password</ion-label>
-          <ion-input type="password"  [(ngModel)]="passwordClient" ></ion-input>
+          <ion-input type="password" placeholder="**********" [(ngModel)]="passwordClient" ></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Save State</ion-label>

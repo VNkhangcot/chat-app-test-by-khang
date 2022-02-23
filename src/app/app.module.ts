@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import {LoadingManagementComponent}from './loading-management/loading-management.component';
 
-
 //Component
 //Custom
 
