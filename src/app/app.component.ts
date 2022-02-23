@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {  Router,NavigationEnd } from '@angular/router';
+import { AuthServicesService } from './services/auth-services.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,5 +16,25 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+
+  isAuthenticated = false;
+  name = 'Get Current Url Route Demo';
+  currentRoute: string = window.location.pathname;
+  constructor(private router: Router ,public authService: AuthServicesService) {
+    
+    
+    // this.router.events.(event => event instanceof NavigationEnd)
+    //       .subscribe(event => 
+    //        {
+    //           this.currentRoute = event.url;          
+    //           console.log(event);
+    //        });
+    console.log("state auth: " +authService.isCheckAuth());
+  }
+  ngOnInit() {
+    this.isAuthenticated = this.authService.isCheckAuth();
+  }
+
+
+
 }

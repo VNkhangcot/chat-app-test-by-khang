@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent} from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LoadingManagementComponent } from './loading-management/loading-management.component';
+import { ChatboxComponent } from './chatbox/chatbox.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,10 @@ const routes: Routes = [
   },{
     path: 'loading',
     component: LoadingManagementComponent
-  },
+  },{
+    path: 'chatbox',
+    component: ChatboxComponent
+  }
 ];
 
 @NgModule({

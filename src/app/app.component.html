@@ -2,7 +2,7 @@
   <ion-split-pane contentId="main-content">
 
 
-    <!-- <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay" *ngIf="isAuthenticated">
       <ion-content>
         <ion-list id="inbox-list">
           <img style="width: 100%; border-radius: 30px;" src="https://images.samsung.com/is/image/samsung/assets/vn/support/mobile-devices/how-to-use-ar-emoji/08-1-hk-en-S10-AR-emoji.gif?$ORIGIN_GIF$" />
@@ -25,11 +25,11 @@
           </ion-item>
           <ion-item *ngFor="let label of labels" lines="none">
             <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
+            <ion-label routerLink="/chatbox">{{ label }}</ion-label>
           </ion-item>
         </ion-list>
       </ion-content>
-    </ion-menu> -->
+    </ion-menu>
 
 
     <ion-router-outlet id="main-content"></ion-router-outlet>
